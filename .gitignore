@@ -1,8 +1,5 @@
 jikesrvm.iml
 
-# Local configuration
-/.ant.properties
-
 # Files for Eclipse project
 /.project
 /.settings
@@ -10,6 +7,9 @@ jikesrvm.iml
 /.pmd
 /.checkstyle
 /eclipse/
+
+# Files for IntelliJ IDEA
+/.idea
 
 # MMTk harness
 /MMTk/harness/src-generated/org/mmtk/harness/lang/parser/*.java
@@ -43,3 +43,4 @@ jikesrvm.iml
 /testing/tests/jni/out.*
 /testing/tests/SPECjbb2000/results
 /test-output/
+/.DS_Store
