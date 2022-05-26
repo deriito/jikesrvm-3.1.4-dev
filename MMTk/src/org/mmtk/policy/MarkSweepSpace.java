@@ -21,6 +21,7 @@ import org.mmtk.utility.HeaderByte;
 
 import org.mmtk.vm.VM;
 
+import org.mmtk.vm.gcassertion.GCAssertionInternal;
 import org.vmmagic.pragma.*;
 import org.vmmagic.unboxed.*;
 
@@ -51,7 +52,8 @@ public final class MarkSweepSpace extends SegregatedFreeListSpace {
   private static final int AVAILABLE_LOCAL_BITS = 8 - HeaderByte.USED_GLOBAL_BITS;
 
   /* mark bits */
-  private static final int COUNT_BASE = 0;
+//  private static final int COUNT_BASE = 0;
+  private static final int COUNT_BASE = 4;
 
   public static final int DEFAULT_MARKCOUNT_BITS = 4;
   public static final int MAX_MARKCOUNT_BITS = AVAILABLE_LOCAL_BITS - COUNT_BASE;
@@ -74,7 +76,8 @@ public final class MarkSweepSpace extends SegregatedFreeListSpace {
   /**
    *
    */
-  private byte markState = 1;
+//  private byte markState = 1;
+  private byte markState = 16;
   private byte allocState = 0;
   private boolean inMSCollection;
   private static final boolean usingStickyMarkBits = VM.activePlan.constraints().needsLogBitInHeader(); /* are sticky mark bits in use? */
@@ -264,6 +267,8 @@ public final class MarkSweepSpace extends SegregatedFreeListSpace {
   @Inline
   public ObjectReference traceObject(TransitiveClosure trace, ObjectReference object) {
     if (HEADER_MARK_BITS) {
+      // check dead assertion
+      GCAssertionInternal.checkDeadMark(object);
       if (testAndMark(object)) {
         markBlock(object);
         trace.processNode(object);
