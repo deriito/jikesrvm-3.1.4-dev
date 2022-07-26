@@ -14,13 +14,13 @@
     
 3. Building & Installing
     
-    sh-5.1# > cd jikesrvm-3.1.4-dev
+    sh-5.1# > cp /media/scripts/*.sh /media/scripts/*.java /root
     
     sh-5.1# > ./rebuild.sh
 
 4. Run your Java program on the VM
     
-    sh-5.1# > ./run.sh HelloWorld.java
+    sh-5.1# > ./crun.sh GCAssertionTest.java
     
 ## Update History
 
