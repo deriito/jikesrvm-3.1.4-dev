@@ -18,7 +18,7 @@
     
     sh-5.1# > ./rebuild.sh
 
-4. Run your Java Program on the VM
+4. Run your Java program on the VM
     
     sh-5.1# > ./run.sh HelloWorld.java
     
