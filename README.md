@@ -1,3 +1,37 @@
+## Quick Start
+
+1. Make the environment for building (with Docker)
+    
+    1.1 Download docker image with the command "docker pull deriito/jikesrvm-3.1.4-buildenv:0.2-celerity"
+    
+    1.2 Use the image to start a docker container
+
+2. Download this source code
+    
+    sh-5.1# > cd
+    
+    sh-5.1# > git clone git@github.com:deriito/jikesrvm-3.1.4-dev.git
+    
+3. Building & Installing
+    
+    sh-5.1# > cd jikesrvm-3.1.4-dev
+    
+    sh-5.1# > ./rebuild.sh
+
+4. Run your Java program on the VM
+    
+    sh-5.1# > ./run.sh HelloWorld.java
+    
+## Update History
+
+edited on 2022.07.26:
+
+Update README.md
+
+## Original "README.md" is as following:
+
+This project is the version 3.1.4, downloaded from https://www.jikesrvm.org/
+
 ## Jikes Research Virtual Machine
 
 Jikes RVM (Research Virtual Machine) provides a flexible open testbed to prototype virtual machine technologies and experiment with a large variety of design alternatives. The system is licensed under the [EPL](http://www.eclipse.org/legal/epl-v10.html), an [OSI](http://www.opensource.org/) approved license. Jikes RVM runs on IA32 32 bit (64 bit support is work in progress) and PowerPC (big endian only).
