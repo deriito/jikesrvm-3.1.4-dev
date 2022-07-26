@@ -14,7 +14,7 @@
     
 3. Building & Installing
     
-    sh-5.1# > cp /media/scripts/*.sh /media/scripts/*.java /root
+    sh-5.1# > cp /media/scripts/\*.sh /media/scripts/\*.java /root
     
     sh-5.1# > ./rebuild.sh
 
